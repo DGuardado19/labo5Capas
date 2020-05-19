@@ -17,7 +17,7 @@ public class Estudiante {
 	@Id
 	@Column(name="c_usuario")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer c_usuario;
+	private Integer id;
 	
 	@Column(name="nombre")
 	@Size(max=20, message="Maximo de 20 caracteres")
@@ -43,22 +43,28 @@ public class Estudiante {
 		
 	}
 	
-	public Estudiante(Integer c_usuario, String nombre, String apellido, String carne, String carrera) {
+	public Estudiante(Integer id,
+			@Size(max = 20, message = "Maximo de 20 caracteres") @NotEmpty(message = "No puede quedar vacio") String nombre,
+			@Size(max = 20, message = "Maximo de 20 caracteres") @NotEmpty(message = "No puede quedar vacio") String apellido,
+			@Size(min = 8, max = 8, message = "El carnet debe tener 8 caracteres") @NotEmpty(message = "No puede quedar vacio") String carne,
+			@Size(max = 20, message = "Maximo de 20 caracteres") @NotEmpty(message = "No puede quedar vacio") String carrera) {
 		super();
-		this.c_usuario = c_usuario;
+		this.id = id;
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.carne = carne;
 		this.carrera = carrera;
 	}
 
-	public Integer getcUsuario() {
-		return c_usuario;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setcUsuario(Integer c_usuario) {
-		this.c_usuario = c_usuario;
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
+
 
 	public String getNombre() {
 		return nombre;
