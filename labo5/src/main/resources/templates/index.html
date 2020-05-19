@@ -28,9 +28,13 @@
 	</form>
 	<br>
 	
-	<a href="/listado">
-		<input type="button" value="Mostrar listado de Estudiantes">
-	</a>
+	<form th:action="@{/listado}" method="post">
+		<input type="submit" value="Mostrar el listado de los Estudiantes">
+	</form>
+	<br>
+	<form th:action="@{/delete}" method="post">
+		<input type="submit" value="Eliminar un estudiante ">
+	</form>
 	
 
 </body>
