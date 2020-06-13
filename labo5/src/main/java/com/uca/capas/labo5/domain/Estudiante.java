@@ -62,7 +62,7 @@ public class Estudiante {
 
 
 	public void setId(Integer id) {
-		this.id = id;
+		this.id= id;
 	}
 
 

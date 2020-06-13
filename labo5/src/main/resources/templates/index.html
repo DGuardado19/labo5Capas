@@ -5,37 +5,47 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form th:action= "@{/insertarEstudiante}" th:object="${estudiante}" method= "post">
-	
-		<label id="nombre">Nombre:</label>
-		<input type="text" placeholder="David" th:field="*{nombre}"> <br>
-		<span th:errors = "*{nombre}" style = "color : #C03314;"></span> <br>
-	
-		<label>Apellido:</label>
-		<input type="text" th:field="*{apellido}"  placeholder="Guardado"> <br>
-		<span th:errors = "*{apellido}" style = "color : #C03314;"></span> <br>
-	
-		<label>Carnet:</label>
-		<input type="number" th:field="*{carne}"  placeholder="00184217"> <br>
-		<span th:errors = "*{carne}" style = "color : #C03314;"></span> <br>
-		
-		<label>Carrera:</label>
-		<input type="text" th:field="*{carrera}"  placeholder="Ing. Informatica"> <br>
-		<span th:errors = "*{carrera}" style = "color : #C03314;"></span> <br>
-		
-		<input type="submit" value="Agregar Estudiante"><br>
-		
+	<form th:action="@{/insertarEstudiante}" th:object="${estudiante}"
+		method="post">
+
+		<label id="nombre">Nombre:</label> <input type="text"
+			placeholder="David" th:field="*{nombre}"> <br> <span
+			th:errors="*{nombre}" style="color: #C03314;"></span> <br> <label>Apellido:</label>
+		<input type="text" th:field="*{apellido}" placeholder="Guardado">
+		<br> <span th:errors="*{apellido}" style="color: #C03314;"></span>
+		<br> <label>Carnet:</label> <input type="number"
+			th:field="*{carne}" placeholder="00184217"> <br> <span
+			th:errors="*{carne}" style="color: #C03314;"></span> <br> <label>Carrera:</label>
+		<input type="text" th:field="*{carrera}"
+			placeholder="Ing. Informatica"> <br> <span
+			th:errors="*{carrera}" style="color: #C03314;"></span> <br> <input
+			type="submit" value="Agregar Estudiante"><br>
+
 	</form>
 	<br>
-	
+
 	<form th:action="@{/listado}" method="post">
 		<input type="submit" value="Mostrar el listado de los Estudiantes">
+	</form>
+	<br>
+
+	<form th:action="@{/mostrarDTO}" method="post">
+		<input type="submit" value="PruebaDTO">
 	</form>
 	<br>
 	<form th:action="@{/delete}" method="post">
 		<input type="submit" value="Eliminar un estudiante ">
 	</form>
-	
+	<br>
+	<form th:action="@{/filtrar}" method="post">
+		<input type="text" name="nombre" placeholder="David"> <br>
+		<input type="submit" value="Filtrar cadena">
+	</form>
+		<form th:action="@{/editarCliente}" method="post">
+		<input type="number" name="id" placeholder="4"> <br>
+		<input type="submit" value="editar">
+	</form>
+
 
 </body>
 </html>
